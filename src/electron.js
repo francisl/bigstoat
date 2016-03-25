@@ -14,12 +14,7 @@ function createWindow () {
 	});
 
   // and load the index.html of the app.
-  var toLoad = 'file://' + __dirname + '/../index.html';
-  console.log('typeof ', typeof(__dirname));
-  console.log('process : ', process);
-  console.log('__dirname : ', toLoad);
-
-  mainWindow.loadURL(toLoad);
+  mainWindow.loadURL('file://' + __dirname + '/../index.html');
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
 

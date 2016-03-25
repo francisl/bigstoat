@@ -1,30 +1,42 @@
-# electron-quick-start
+# electron-template
 
-**Clone and run for a quick way to see an Electron in action.**
+**To start a React/Electron project in a second**
 
-This is a minimal Electron application based on the [Quick Start Guide](http://electron.atom.io/docs/latest/tutorial/quick-start) within the Electron documentation.
+Includes : Reactjs, Redux, Electron, Babel ES2015, Webpack, FlowType
 
-A basic Electron application needs just these files:
+- `index.html` : Is the Main React template.
+- `src/app.jsx` : Entry file for Reactjs
+- `src/electron.js` : Starts the app and creates a browser window to render HTML.
 
-- `index.html` - A web page to render.
-- `main.js` - Starts the app and creates a browser window to render HTML.
-- `package.json` - Points to the app's main file and lists its details and dependencies.
+There is two build file that is specific for Electron (webpack.conf.js) and the other for Reactjs (webpack.conf.app.js)
 
-You can learn more about each of these components within the [Quick Start Guide](http://electron.atom.io/docs/latest/tutorial/quick-start).
+### packages.json commands
 
-## To Use
+- flow : Run the type checker
+- build : Compile the javascript through babel and webpack
+- start : run the above command and start the application
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
-git clone https://github.com/atom/electron-quick-start
+git clone git@github.com:francisl/electron-template.git
 # Go into the repository
-cd electron-quick-start
+cd electron-template
 # Install dependencies and run the app
-npm install && npm start
+npm install
+# Run the application
+npm start
 ```
 
-Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/latest).
+Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/latest)
 
-#### License [CC0 (Public Domain)](LICENSE.md)
+Reactjs
+[documentation](https://facebook.github.io/react/docs/getting-started.html)
+
+Redux
+[documentation](http://redux.js.org/)
+
+Flowtype
+[documentation](http://flowtype.org/docs/getting-started.html#_)
+
+#### License [MPL-2.0)](LICENSE.md)
