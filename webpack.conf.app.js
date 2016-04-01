@@ -12,7 +12,7 @@ module.exports = {
 		filename: 'app.bundle.js',
 		publicPath: '/static/'
 	},
-	devtool: 'source-map',// 'source-map',
+	devtool: 'source-map', // 'source-map',
 	debug: true,
 	resolve: {
 		extensions: ['', '.webpack.js', '.web.js','.js']

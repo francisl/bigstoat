@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider, connect } from 'react-redux';
 import store from './stores/store';
-
+import ResultContainer from './components/container/container.jsx'
 
 class MainApp extends Component {
     render () {
-        return <h1>Hello</h1>;
+        return <ResultContainer />
     }
 }
 
