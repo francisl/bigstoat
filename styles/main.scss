@@ -1,0 +1,100 @@
+#CommandLineContainer {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    height: 50px;
+    display: flex;
+}
+
+#CommandLineContainer input {
+    flex-grow: 1;
+    font-size: 16pt;
+    padding: 4px 10px;
+    font-family: sans-serif;
+}
+
+#PwdBreadcrumb {
+    height: 26px;
+    border-bottom: 1px solid lightgrey;
+    background-color: lightgray;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    // align-content: flex-start;
+    text-align: center;
+    align-items: center;
+}
+
+div#PwdBreadcrumb a {
+    padding: 0px 4px;
+    cursor: pointer;
+    color: rgb(2, 103, 163)
+}
+
+div#PwdBreadcrumb .separator {
+    padding: 0px 4px;
+    min-width: 10px;
+    max-width: 20px;
+}
+
+#FilePresenterContainer{
+    position: absolute;
+    top: 26px;
+    bottom: 50px;
+    right: 0px;
+    left: 0px;
+    padding: 20px;
+    text-align: center;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    
+}
+
+.file-item-container {
+    padding: 0px 10px;
+    flex: 1;
+    min-width: 100px;
+    max-width: 120px;
+}
+
+$font-size: 0.9rem;
+$line-height: 1.4;
+$lines-to-show: 2;
+
+div.file-item-container p, 
+div.file-item-containerspan {
+    white-space: pre-line; 
+    width: 84%;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block; /* Fallback for non-webkit */
+    height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+    margin: 0 auto;
+    font-size: $font-size;
+    line-height: $line-height;
+    -webkit-line-clamp: $lines-to-show;
+    cursor: pointer;
+}
+
+.file-item-container i {
+    font-size: 64pt;
+    color: rgb(2, 103, 163);
+    text-shadow: 0px 0px 30px rgb(0, 119, 189);
+    cursor: pointer;
+}
+
+.file-element {
+    // min-width: 100px;
+}
+
+.file-element i {
+    
+}

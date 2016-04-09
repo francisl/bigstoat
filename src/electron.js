@@ -1,8 +1,11 @@
 // @flow
 var electron = require('electron');
+var ipcMain = require('electron').ipcMain;
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
-
+var fs = require('fs');
+var os = require('os');
+var path = require('path');
 let mainWindow;
 
 function createWindow () {
@@ -47,3 +50,58 @@ app.on('activate', function () {
     createWindow();
   }
 });
+
+
+function filterHiddenFile(file) {
+    if (file.startsWith('.')) {
+        return false;
+    }
+    return true;
+}
+
+function createFileObject(requestDir, file) {
+    const filePath = path.join(requestDir, file);
+    const stat = fs.statSync(filePath);
+     
+    let fileInfo = {
+        stat: stat,
+        isDirectory: stat.isDirectory(),
+        isFile: stat.isFile()
+    };
+    console.log(`Version: ${process.version}`);
+    console.log('file path : ', path.parse);
+    return Object.assign({}, fileInfo, path.parse(filePath));
+}
+
+function listDir(event, requestDir, showHidden=false){
+    console.log('listing : ', requestDir);
+    let fileList = [];
+    fs.readdir(requestDir, (err, files) =>{
+        files
+        .filter(filterHiddenFile)
+        .forEach((file) => {
+            fileList.push(createFileObject(requestDir, file));
+        })
+        
+        console.log('sending file : ', fileList);
+        event.returnValue = {
+            pwd: requestDir,
+            fileList
+        };
+    });
+    event.sender.send('fs:currentPath:async', {
+        path: requestDir 
+    });
+}
+
+ipcMain.on('fs:get:home:sync', function(event) {
+    listDir(event, os.homedir());
+});
+
+ipcMain.on('fs:get:dir:sync', function(event, requestDir) {
+    console.log('request dir : ', requestDir);
+    listDir(event, requestDir);
+});
+
+
+  

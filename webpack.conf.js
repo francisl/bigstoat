@@ -35,7 +35,7 @@ module.exports = {
 
 	externals: [
 		(function () {
-			var IGNORES = ['electron', 'process'];
+			var IGNORES = ['electron', 'path', 'process', 'fs', 'os'];
 			return function (context, request, callback) {
 				if (IGNORES.indexOf(request) >= 0) {
 					return callback(null, "require('" + request + "')");

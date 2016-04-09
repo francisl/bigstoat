@@ -3,7 +3,7 @@ var path = require('path');
 // var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-	cache: true,
+	cache: false,
 	entry: [
 		'./src/app.jsx'
 	],
@@ -22,7 +22,8 @@ module.exports = {
 			{	test: /\.(js|jsx)?$/,
 				exclude: /(node_modules)/,
 				loaders: ['babel'],
-				include: [path.join(__dirname, '/src')]
+				include: [path.join(__dirname, '/src'), 
+                          path.join(__dirname, 'node_modules/react-mdl/extra')]
 			},
 			{ // loader for all scss, sass, css files excluding foundation
 				test: /\.(s?css|sass)$/,
@@ -31,10 +32,16 @@ module.exports = {
 			},
 			{	test: /\.css$/,
 				include: path.join(__dirname, 'styles'),
+				loader: "style-loader!css-loader" 
+            },
+			{	test: /\.css$/,
+				include: path.join(__dirname, 'node_modules/react-mdl/extra'),
 				loader: "style-loader!css-loader" }
 		]
 	},
 	plugins: [
-		//new webpack.optimize.UglifyJsPlugin()
-	]
+		// new webpack.optimize.UglifyJsPlugin()
+        new webpack.IgnorePlugin(new RegExp("^(electron|fs|ipc)$"))
+	],
+    // target: "atom"
 };

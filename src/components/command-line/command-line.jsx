@@ -11,7 +11,7 @@ const CommandLine = (props) => {
     const classes = classNames({}, className);
 
     return (
-        <div className={classes} {...otherProps}>
+        <div id="CommandLineContainer" className={classes} {...otherProps}>
             <input type="text"></input>
         </div>
     );
