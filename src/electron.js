@@ -62,14 +62,12 @@ function filterHiddenFile(file) {
 function createFileObject(requestDir, file) {
     const filePath = path.join(requestDir, file);
     const stat = fs.statSync(filePath);
-     
     let fileInfo = {
         stat: stat,
         isDirectory: stat.isDirectory(),
         isFile: stat.isFile()
     };
-    console.log(`Version: ${process.version}`);
-    console.log('file path : ', path.parse);
+    console.log('file path : ', filePath);
     return Object.assign({}, fileInfo, path.parse(filePath));
 }
 
@@ -81,16 +79,17 @@ function listDir(event, requestDir, showHidden=false){
         .filter(filterHiddenFile)
         .forEach((file) => {
             fileList.push(createFileObject(requestDir, file));
-        })
-        
-        console.log('sending file : ', fileList);
+        });
+
         event.returnValue = {
-            pwd: requestDir,
+            pwd: Object.assign({}, {requestDir}, path.parse(requestDir)),
+            sep: path.sep,
             fileList
         };
     });
+
     event.sender.send('fs:currentPath:async', {
-        path: requestDir 
+        path: requestDir
     });
 }
 
@@ -102,6 +101,3 @@ ipcMain.on('fs:get:dir:sync', function(event, requestDir) {
     console.log('request dir : ', requestDir);
     listDir(event, requestDir);
 });
-
-
-  
