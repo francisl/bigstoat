@@ -1,42 +1,40 @@
-# electron-template
+# File Manager
 
-**To start a React/Electron project in a second**
+**File Manager prototype in Reactjs and Electron**
 
-Includes : Reactjs, Redux, Electron, Babel ES2015, Webpack, FlowType
+Includes : Reactjs, Redux, Electron, Babel, Webpack, FlowType
 
-- `index.html` : Is the Main React template.
-- `src/app.jsx` : Entry file for Reactjs
-- `src/electron.js` : Starts the app and creates a browser window to render HTML.
+![Screenshot1](./resources/screenshot1.png =600x521)
 
-There is two build file that is specific for Electron (webpack.conf.js) and the other for Reactjs (webpack.conf.app.js)
-
-### packages.json commands
-
-- flow : Run the type checker
-- build : Compile the javascript through babel and webpack
-- start : run the above command and start the application
-
+## Get it Running
 
 ```bash
 # Clone this repository
 git clone git@github.com:francisl/electron-template.git
 # Go into the repository
-cd electron-template
+cd bigstoat
 # Install dependencies and run the app
 npm install
 # Run the application
 npm start
 ```
 
-Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/latest)
+## Development
 
-Reactjs
-[documentation](https://facebook.github.io/react/docs/getting-started.html)
+- `index.html` : Is the Main React template.
+- `src/app/` : Client/UI Reactjs application
+- `src/app/app.jsx` : Entry file for Reactjs
+- `src/electron/` : Backend/Electron application
+- `src/electron/electron.js` : Starts the app and creates a browser window to render HTML.
 
-Redux
-[documentation](http://redux.js.org/)
 
-Flowtype
-[documentation](http://flowtype.org/docs/getting-started.html#_)
+### packages.json additional commands
+
+- flow - Run the type checker
+- build - Compile the javascript through babel and webpack
+- build:app - Only compile client application
+- build:electron - Only compile backend
+- start - typecheck, compile and run the application
+
 
 #### License [MPL-2.0)](LICENSE.md)

@@ -1,0 +1,30 @@
+$breadcrumb-height: 32px;
+
+#PwdBreadcrumb {
+    height: $breadcrumb-height;
+    border-bottom: 1px solid rgb(165, 165, 165);
+    background-color: lightgray;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+	padding-left: 15px;
+	padding-right: 15px;
+    flex-direction: row;
+    // align-content: flex-start;
+    text-align: center;
+    align-items: center;
+}
+
+div#PwdBreadcrumb .link {
+    padding: 0px 4px;
+    cursor: pointer;
+    color: rgb(2, 103, 163)
+}
+
+div#PwdBreadcrumb .separator {
+    padding: 0px 4px;
+    min-width: 10px;
+    max-width: 20px;
+}

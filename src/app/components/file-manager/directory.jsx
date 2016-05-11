@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import Icon from 'react-mdl/lib/Icon';
 
 const propTypes = {
     className: PropTypes.string
@@ -12,10 +11,10 @@ const Directory = (props) => {
     const classes = classNames({
         'file-element': true
     }, className);
-    
+
     return (
         <div className={classes} {...otherProps}>
-            <Icon name="folder" />
+            <i className="folder icon" />
             <p>{ children }</p>
         </div>
     );

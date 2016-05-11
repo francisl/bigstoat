@@ -2,13 +2,13 @@
   "name": "bigstoat",
   "version": "0.1.0",
   "description": "Cross platform File Manager",
-  "main": "src/electron.js",
+  "main": "src/electron/electron.js",
   "scripts": {
     "build": "npm run build:electron; npm run build:app",
     "build:app": "webpack --config webpack.conf.app.js -w",
-    "build:electron": "babel -o dist/electron.bundle.js --babelrc .babelrc_electron src/electron.js",
+    "build:electron": "babel -d dist/electron --babelrc .babelrc_electron src/electron",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
-    "start": "npm run flow; npm run build:electron; electron dist/electron.bundle.js"
+    "start": "npm run flow; npm run build:electron; electron dist/electron/electron.js"
   },
   "repository": {
     "type": "git",
@@ -39,18 +39,21 @@
     "electron-rebuild": "^1.1.3",
     "flow-bin": "^0.22.1",
     "node-sass": "^3.4.2",
-    "react-redux": "^4.4.1",
-    "redux": "^3.3.1",
+    "react-redux": "^4.4.2",
+    "redux": "^3.4.0",
     "redux-thunk": "^2.0.1",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
-    "webpack": "^1.12.14",
+    "webpack": "^1.12.15",
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "classnames": "^2.2.3",
-    "react": "^0.14.8",
-    "react-dom": "^0.14.8",
-    "react-mdl": "^1.5.2"
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "semantic-ui-css": "^2.1.8",
+    "url-loader": "^0.5.7"
   }
 }

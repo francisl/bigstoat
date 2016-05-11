@@ -2,5 +2,13 @@
     "plugins": ["transform-flow-strip-types"],
     "presets": ["es2015", "stage-0", "react"],
     "sourceMaps": "both",
-    "comments": false
+    "comments": false,
+    "env": {
+      "production": {
+        "plugins": [
+          "transform-react-constant-elements",
+          "transform-react-inline-elements"
+        ]
+      }
+    }
 }
