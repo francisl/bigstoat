@@ -4,7 +4,7 @@
 
 Includes : Reactjs, Redux, Electron, Babel, Webpack, FlowType
 
-![Screenshot1](./resources/screenshot1.png =600x521)
+<img src="https://raw.githubusercontent.com/francisl/bigstoat/master/resources/screenshot1.png" width="600" height="521">
 
 ## Get it Running
 
