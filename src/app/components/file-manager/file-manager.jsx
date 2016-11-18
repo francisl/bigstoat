@@ -6,9 +6,8 @@ import Directory from './directory.jsx';
 import { onItemRightClickMenu, onDirectoryRightClickMenu } from '../../lib/right-click-menu.js';
 import { addItemMenu } from '../../lib/right-click-menu.js';
 
-const remote = window.require('remote');
-var Menu = remote.require('menu');
-var ipc = window.require('electron').ipcRenderer;
+const {app, Menu} = require('electron')
+const ipc = require('electron').ipcRenderer;
 
 class FilePresenter extends React.Component {
     static propTypes = {

@@ -1,9 +1,7 @@
 import {createDir, deletePath}  from './dir-file-api.js';
 
-const remote = window.require('remote');
-var Menu = remote.require('menu');
-var MenuItem = remote.require('menu-item');
-
+const {Menu, MenuItem} = require('electron');
+const remote = require('electron').remote;
 
 const fileItemMenuTemplate = [{
 		label: 'Delete',

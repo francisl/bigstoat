@@ -50,5 +50,5 @@ module.exports = {
         new webpack.IgnorePlugin(new RegExp("^(electron)$")),
 		new webpack.ProvidePlugin({ React: 'react' })
 	],
-    // target: "atom"
+    target: "electron"
 };
