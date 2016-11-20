@@ -1,7 +1,9 @@
 import {createDir, deletePath}  from './dir-file-api.js';
 
-const {Menu, MenuItem} = require('electron');
 const remote = require('electron').remote;
+const Menu = remote.Menu;
+const MenuItem =remote.MenuItem;
+
 
 const fileItemMenuTemplate = [{
 		label: 'Delete',
@@ -10,6 +12,7 @@ const fileItemMenuTemplate = [{
 		}
 	}
 ];
+debugger;
 const fileItemMenu = new Menu.buildFromTemplate(fileItemMenuTemplate);
 
 export function onItemRightClickMenu(e, path){

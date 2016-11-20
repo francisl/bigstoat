@@ -1,8 +1,9 @@
 var webpack = require('webpack');
 var path = require('path');
+var webpackTargetElectronRenderer = require('webpack-target-electron-renderer');
 // var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-module.exports = {
+let options = {
 	cache: false,
 	entry: [
 		'./src/app/app.jsx'
@@ -47,8 +48,12 @@ module.exports = {
 	},
 	plugins: [
 		// new webpack.optimize.UglifyJsPlugin()
-        new webpack.IgnorePlugin(new RegExp("^(electron)$")),
+        //new webpack.IgnorePlugin(new RegExp("^(electron)$")),
 		new webpack.ProvidePlugin({ React: 'react' })
-	],
-    target: "electron"
+	]
 };
+
+
+options.target = 'electron-renderer'
+
+module.exports = options;
