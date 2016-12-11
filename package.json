@@ -54,6 +54,7 @@
     "classnames": "^2.2.3",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
+    "semantic-ui": "^2.2.4",
     "semantic-ui-css": "^2.1.8",
     "url-loader": "^0.5.7"
   }
