@@ -9,8 +9,8 @@
     "build:app:watch": "webpack --config webpack.config.app.js -w",
     "build:electron": "babel -d dist/electron --babelrc .babelrc_electron src/electron",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
-    "run": "electron dist/electron/electron.js",
-    "start": "npm run build:app && npm run build:electron && npm run run"
+    "start": "npm run flow && npm run build && electron dist/electron/electron.js",
+    "launch": "electron dist/electron/electron.js"
   },
   "repository": {
     "type": "git",
@@ -48,14 +48,13 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.12.15",
     "webpack-dev-server": "^1.14.1",
-    "webpack-target-electron-renderer": "^0.4.0"
+    "webpack-target-electron-renderer": "^0.4.0",
+    "url-loader": "^0.5.7"
   },
   "dependencies": {
     "classnames": "^2.2.3",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
-    "semantic-ui": "^2.2.4",
-    "semantic-ui-css": "^2.1.8",
-    "url-loader": "^0.5.7"
+    "semantic-ui": "^2.2.4"
   }
 }

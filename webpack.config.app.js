@@ -1,9 +1,9 @@
 var webpack = require('webpack');
 var path = require('path');
-var webpackTargetElectronRenderer = require('webpack-target-electron-renderer');
+// var webpackTargetElectronRenderer = require('webpack-target-electron-renderer');
 // var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-let options = {
+var options = {
 	cache: false,
 	entry: [
 		'./src/app/app.jsx'
