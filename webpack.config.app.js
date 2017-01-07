@@ -23,8 +23,7 @@ var options = {
 			{	test: /\.(js|jsx)?$/,
 				exclude: /(node_modules)/,
 				loaders: ['babel'],
-				include: [path.join(__dirname, '/src/app'),
-                          path.join(__dirname, 'node_modules/semantic-ui-css')]
+				include: path.join(__dirname, '/src/app')
 			},
 			{ // loader for all scss, sass, css files excluding foundation
 				test: /\.(s?css|sass)$/,
@@ -32,18 +31,20 @@ var options = {
 				loader: 'style!css!autoprefixer?browsers=last 3 versions!sass'
 			},
 			{	test: /\.css$/,
-				include: path.join(__dirname, 'node_modules/semantic-ui-css'),
+				include: path.join(__dirname, 'semantic/dist'),
 				loader: "style-loader!css-loader"
 			},
-			{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-				loader: "url-loader?limit=10000&mimetype=application/font-woff",
-				include: [path.join(__dirname, 'node_modules/semantic-ui-css')]},
-			{ test: /\.(png)?$/,
-				loader: "file-loader",
-				include: [path.join(__dirname, 'node_modules/semantic-ui-css')]},
-			{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-				loader: "file-loader",
-				include: [path.join(__dirname, 'node_modules/semantic-ui-css')]}
+			// { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+			// 	loader: "url-loader?limit=10000&mimetype=application/font-woff",
+			// 	include: [path.join(__dirname, 'node_modules/semantic-ui-css')]},
+			// { test: /\.(png)?$/,
+			// 	loader: "file-loader",
+			// 	include: [path.join(__dirname, 'node_modules/semantic-ui-css')]},
+			// { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+			// 	loader: "file-loader",
+			// 	include: [path.join(__dirname, 'node_modules/semantic-ui-css')]},
+			{ test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				loader: 'url-loader?limit=100000' }
 		]
 	},
 	plugins: [
