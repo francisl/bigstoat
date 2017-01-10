@@ -4,7 +4,7 @@
 
 Includes : Reactjs, Redux, Electron, Babel, Webpack, FlowType
 
-<img src="https://raw.githubusercontent.com/francisl/bigstoat/master/resources/screenshot1.png" width="600" height="521">
+<img src="https://raw.githubusercontent.com/francisl/bigstoat/master/resources/screenshot2.png" width="600" height="521">
 
 ## Get it Running
 
@@ -37,4 +37,4 @@ npm start
 - start - typecheck, compile and run the application
 
 
-#### License [MPL-2.0)](LICENSE.md)
+#### License [MPL-2.0](LICENSE.md)

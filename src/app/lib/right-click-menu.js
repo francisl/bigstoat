@@ -12,7 +12,7 @@ const fileItemMenuTemplate = [{
 		}
 	}
 ];
-debugger;
+
 const fileItemMenu = new Menu.buildFromTemplate(fileItemMenuTemplate);
 
 export function onItemRightClickMenu(e, path){

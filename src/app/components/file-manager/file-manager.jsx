@@ -5,12 +5,12 @@ import File from './file.jsx';
 import Directory from './directory.jsx';
 import { onItemRightClickMenu, onDirectoryRightClickMenu } from '../../lib/right-click-menu.js';
 import { addItemMenu } from '../../lib/right-click-menu.js';
-
+import ScrollView from '../UI/layout/scrollview.jsx';
 
 const {app, Menu} = require('electron')
 const ipc = require('electron').ipcRenderer;
 
-class FilePresenter extends React.Component {
+class FileManager extends React.Component {
     static propTypes = {
         className: PropTypes.string
     };
@@ -75,17 +75,19 @@ class FilePresenter extends React.Component {
                 </div>);
         });
         return (
-            <div>
+            <div id="FileManageContainer">
                 <Breadcrumb onClick={this.syncDirCb.bind(this)} separator={ this.state.sep } path={ this.state.pwd }/>
-                <div id="FilePresenterContainer" 
-                    className={classes} {...otherProps} 
-                    onContextMenu={(e) => onDirectoryRightClickMenu(e, this.state.pwd.requestDir)} 
-                    data-path={this.state.pwd.requestDir}>
-                    {fileUI}
-                </div>
+                <ScrollView>
+                    <div id="FilePresenterContainer" 
+                        className={classes} {...otherProps} 
+                        onContextMenu={(e) => onDirectoryRightClickMenu(e, this.state.pwd.requestDir)} 
+                        data-path={this.state.pwd.requestDir}>
+                        {fileUI}
+                    </div>
+                </ScrollView>
             </div>
         );
     }
 };
 
-export default FilePresenter;
+export default FileManager;
