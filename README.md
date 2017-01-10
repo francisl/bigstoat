@@ -4,7 +4,7 @@
 
 Includes : Reactjs, Redux, Electron, Babel, Webpack, FlowType
 
-<img src="https://raw.githubusercontent.com/francisl/bigstoat/master/resources/screenshot2.png" width="600" height="521">
+<img src="https://raw.githubusercontent.com/francisl/bigstoat/master/resources/screenshot2.jpg" width="799" height="475">
 
 ## Get it Running
 
