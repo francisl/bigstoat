@@ -5,7 +5,7 @@ import File from './file.jsx';
 import Directory from './directory.jsx';
 import { onItemRightClickMenu, onDirectoryRightClickMenu } from '../../lib/right-click-menu.js';
 import { addItemMenu } from '../../lib/right-click-menu.js';
-import ScrollView from '../UI/layout/scrollview.jsx';
+import { ScrollView } from 'baer-toolkit';
 
 const {app, Menu} = require('electron')
 const ipc = require('electron').ipcRenderer;

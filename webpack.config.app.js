@@ -34,22 +34,11 @@ var options = {
 				include: path.join(__dirname, 'semantic/dist'),
 				loader: "style-loader!css-loader"
 			},
-			// { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-			// 	loader: "url-loader?limit=10000&mimetype=application/font-woff",
-			// 	include: [path.join(__dirname, 'node_modules/semantic-ui-css')]},
-			// { test: /\.(png)?$/,
-			// 	loader: "file-loader",
-			// 	include: [path.join(__dirname, 'node_modules/semantic-ui-css')]},
-			// { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-			// 	loader: "file-loader",
-			// 	include: [path.join(__dirname, 'node_modules/semantic-ui-css')]},
 			{ test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 				loader: 'url-loader?limit=100000' }
 		]
 	},
 	plugins: [
-		// new webpack.optimize.UglifyJsPlugin()
-        //new webpack.IgnorePlugin(new RegExp("^(electron)$")),
 		new webpack.ProvidePlugin({ React: 'react' })
 	]
 };
