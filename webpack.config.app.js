@@ -14,21 +14,21 @@ var options = {
 		publicPath: path.join(__dirname, 'dist/')
 	},
 	devtool: 'source-map', // 'source-map',
-	debug: true,
 	resolve: {
-		extensions: ['', '.webpack.js', '.web.js','.js']
+		extensions: ['.webpack.js', '.web.js','.js', '.jsx'],
+  		mainFields: ['module', 'browser', 'main'],
 	},
 	module: {
 		loaders: [
 			{	test: /\.(js|jsx)?$/,
 				exclude: /(node_modules)/,
-				loaders: ['babel'],
+				loaders: ['babel-loader'],
 				include: path.join(__dirname, '/src/app')
 			},
 			{ // loader for all scss, sass, css files excluding foundation
 				test: /\.(s?css|sass)$/,
 				include: path.join(__dirname, 'styles'),
-				loader: 'style!css!autoprefixer?browsers=last 3 versions!sass'
+				loader: 'style-loader!css-loader!autoprefixer-loader?browsers=last 3 versions!sass-loader'
 			},
 			{	test: /\.css$/,
 				include: path.join(__dirname, 'semantic/dist'),
